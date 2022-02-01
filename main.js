@@ -26,6 +26,7 @@ function play() {
 
     let numeroCelle;
     let cellePerRiga;
+    const tentativi = [];
 
     switch (difficolta) {
         case "easy":
@@ -72,7 +73,30 @@ console.log(bombs);
         this.classList.add('clicked');
         alert(this.innerText);
         this.removeEventListener('click', gestisciClickCella);
+
+        const cell = parseInt(this.innerText);
+        if (bombs.includes(cell)) {
+        terminaGioco();
+        } else { tentativi.push(cell);
+
+        }
+        
+
     }
+
+    function terminaGioco() {
+
+        const squares = document.getElementsByClassName('square');
+
+        for (let i = 0; i < squares.length; i++) {
+            if (bombs.includes(parseInt(squares[i].innerText))) {
+                squares[i].classList.add('bomb');
+            }
+        }
+
+    }
+
+
 
     function generateBombs (bombNumber, numeroCelle) {
         const activeBombs = [];
@@ -80,7 +104,10 @@ console.log(bombs);
 
             const bomBa = getRandomNumber(1, numeroCelle);
 
-          if  activeBombs.push();
+          if (!activeBombs.includes(bomBa) ) {
+            activeBombs.push(bomBa);
+          } 
+          
         }
         return activeBombs;
     }

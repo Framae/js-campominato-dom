@@ -36,6 +36,9 @@ header::after {
     flex-wrap: wrap;
 }
 
+.bomb {
+    background-color: red;
+}
 
 .square {
     border: 1px solid black;
