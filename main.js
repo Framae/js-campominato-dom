@@ -18,6 +18,10 @@ function play() {
     
     const difficolta = document.getElementById('difficolta').value;
 
+
+    //Costruisco campo
+
+
     let numeroCelle;
     let cellePerRiga;
 
@@ -50,11 +54,8 @@ generaCampoGioco(numeroCelle);
         
             nodo.innerText = i;
         
-            nodo.addEventListener('click', function() {
-                this.classList.add('clicked');
-            });
-        
-            gioco.appendChild(nodo);
+            nodo.addEventListener('click', gestisciClickCella);
+            grid.appendChild(nodo);
         
         }
 
@@ -62,7 +63,11 @@ generaCampoGioco(numeroCelle);
 
     }
 
-
+    function gestisciClickCella() {
+        this.classList.add('clicked');
+        alert(this.innerText);
+        this.removeEventListener('click', gestisciClickCella);
+    }
 }
 
 
