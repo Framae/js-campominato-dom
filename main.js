@@ -10,6 +10,8 @@ document.getElementById('start-play').addEventListener('click', play);
 //funzione che gestisce tutto il gioco
 function play() {
 
+    const NUMERO_BOMBE = 16;
+
     console.log('Avvio del gioco');
 
     const gioco = document.getElementById('grid');
@@ -38,6 +40,9 @@ function play() {
             break;
     }
 generaCampoGioco(numeroCelle);
+const bombs = generateBombs(NUMERO_BOMBE, numeroCelle);
+
+console.log(bombs);
 
     function generaCampoGioco(numeroCelle) {
 
@@ -68,9 +73,27 @@ generaCampoGioco(numeroCelle);
         alert(this.innerText);
         this.removeEventListener('click', gestisciClickCella);
     }
+
+    function generateBombs (bombNumber, numeroCelle) {
+        const activeBombs = [];
+        while (activeBombs.length < bombNumber) {
+
+            const bomBa = getRandomNumber(1, numeroCelle);
+
+          if  activeBombs.push();
+        }
+        return activeBombs;
+    }
 }
 
 
+
+
+
+
+function getRandomNumber (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
 
