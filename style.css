@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenitore {
+    background-color: turquoise;
+    position: relative;
+    width: 100%;
+    margin: 100px 0;
+    padding: 50px 0;
+}
+
+header {
+    height: 50px;
+}
+
+.challenge-selector {
+    float: right;
+    padding: 30px;
+}
+
+header::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#grid {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.square {
+    border: 1px solid black;
+    display: flex;
+}
+
+.clicked {
+    background-color: rgb(22, 22, 122);
+}
